@@ -1,10 +1,12 @@
 mod authenticators;
 pub mod error;
+#[cfg(feature = "noble")]
 mod governance;
 mod megavault;
 mod methods;
 
 pub use self::authenticators::Authenticator;
+#[cfg(feature = "noble")]
 pub use self::governance::Governance;
 use self::{authenticators::Authenticators, megavault::MegaVault};
 use super::{
@@ -589,6 +591,7 @@ impl NodeClient {
     }
 
     /// Access the governance requests dispatcher
+    #[cfg(feature = "noble")]
     pub fn governance(&mut self) -> Governance<'_> {
         Governance::new(self)
     }
