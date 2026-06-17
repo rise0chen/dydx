@@ -5,7 +5,7 @@ use chrono::{DateTime, Utc};
 use cosmrs::{AccountId, Denom as CosmosDenom};
 use derive_more::{Add, Deref, DerefMut, Display, Div, From, Mul, Sub};
 use dydx_proto::dydxprotocol::subaccounts::SubaccountId as ProtoSubaccountId;
-use rand::{rng, Rng};
+use rand::{rng, Rng, RngExt};
 use serde::{Deserialize, Deserializer, Serialize};
 use serde_with::{serde_as, DisplayFromStr};
 use std::collections::HashMap;
